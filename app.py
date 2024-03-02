@@ -7,7 +7,7 @@ def fetch_poster(movie_id):
     response = requests.get('https://api.themoviedb.org/3/movie/{}?api_key=179fbe1580217c83a60db11791aa95d9&language=en-US'.format(movie_id))
     data = response.json()
     print(data)
-    return 'https://image.tmdb.org/t/p/w500/' + data['poster_path']
+    return 'https://image.tmdb.org/t/p/w500' + data['poster_path']
 def recommend(movie):
     movie_index = movies[movies['title'] == movie].index[0]
     distances = similarity[movie_index]
